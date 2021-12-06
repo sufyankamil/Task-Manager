@@ -1,0 +1,22 @@
+#menu{
+    width: 100%;
+    padding: -0px;
+    background-color: goldenrod;
+    overflow: hidden;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: block;
+    list-style-type: none;
+
+}
+ div a{
+    padding: 30px;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+#menu .active{
+    background-color: lightgray;
+    border-radius: 10px;
+    color: black;
+}
