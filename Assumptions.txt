@@ -1,0 +1,19 @@
+Task management is more than just a task manager checking off items on a to-do list!
+
+This project involves the following steps:
+Step 1: Register yourself if not done (register.php)
+
+Step 2: if you have registered then you should start with login -> (index.php)  
+
+Step 3: Login credentials -> (index.php) 
+
+Step 4: Once you have logged in and you will be redirected to dashboard page where one can see the list of task with the date,time,status of task. (dashboard.php)
+There a button can be seen "ADD TASK" which will redirect you to the adding new task (task.php) 
+
+Step 5: After successfully login you will be redirected to Dashboard, where you can see the list of tasks. 
+
+Step 6: you will see "EDIT" and "DELETE" buttons, where you can edit and delete a task. 
+(EDIT -> UPD.php)(partial), (DELETE -> delete_request.php) )
+
+(ONE CAN ALSO NAVIGATE FROM header)
+
