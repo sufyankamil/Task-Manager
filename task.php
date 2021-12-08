@@ -8,113 +8,186 @@ $userprofile = $_SESSION['username'];
 
 ?>
 
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="style.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <title>Task</title>
 
     <div id="menu">
+
+
 
         <a href="dashboard.php">Dashboard</a>
         <a class="active" href="task.php">Task</a>
         <a href=""></a>
 
-        <li style="float: right; margin-right:  80px;"><a href="logout.php"> Logout</a></li>
+        <li style="float: right; margin-right: 30px;"><a href="logout.php"> Logout</a></li>
+        <li style="float: right; margin-right:  20px;"><a href="about.html"> About</a></li>
 
     </div>
 
-    <div id="tab">
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
 
 
-        <form method="post" action="task.php">
-            <center>
-                <table border="3" cellpadding="8" cellspacing="6">
+        #menu {
+            width: 100%;
+            padding: -0px;
+            background: linear-gradient(135deg, #71b7e6, #9b59b6);
+            overflow: hidden;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            display: block;
+            list-style-type: none;
+        }
 
-                    <tr>
-                        <td colspan="2" align="center">
-                            <h2>Add Task</h2>
-                        </td>
-                    </tr>
+        div a {
+            padding: 15px 20px;
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+        }
 
-                    <tr>
-                        <td>Task</td>
-                        <td><input type="text" name="task" placeholder="Enter the Task" required></td>
-                    </tr>
+        #menu .active {
+            color: black;
+            border: 1px solid black;
+            border-width: 2px;
+            padding-right: 10px;
+            padding-left: 10px;
+            margin-left: 10px;
+        }
 
-                    <tr>
-                        <td>Date of Completion</td>
-                        <td><input type="date" name="date" required></td>
-                    </tr>
+        #menu li a {
+            color: black;
+            border: 1px solid black;
+            border-width: 2px;
+            padding-right: 10px;
+            padding-left: 10px;
+            margin-left: 50px;
+        }
 
-                    <tr>
-                        <td>Description</td>
-                        <td><textarea name="description" placeholder="Enter the Description" required></textarea></td>
-                    </tr>
+        /* ---------- footer -----------*/
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
 
-                    <!-- <tr>
-                        <td>Status</td>
-                        <td>
-                            <select name="class" required>
-                                <option value="" selected="" disabled="">--select status--</option>
-                                <option value="Incomplete">Incomplete</option>
-                                <option value="Pending">Pending</option>
-                                <option value="Complete">Complete</option>
-                            </select>
-                        </td>
-                    </tr> 
+            background: linear-gradient(135deg, #71b7e6, #9b59b6);
+            color: whitesmoke;
+            font-size: 14px;
+            padding: 10px 0 20px;
+        }
 
-                    <tr>
-                        <td>Description</td>
-                        <td><input type="text" name="subject" placeholder="Describe your Task" required></td>
-                    </tr> -->
+        .footer p {
+            color: white;
+        }
 
-                    <tr>
-                        <td align="center" colspan="2"><input type="submit" name="submit" value="Submit"></td>
-                    </tr>
+        .footer h3 {
+            color: white;
+            margin-bottom: 20px;
+        }
 
-                </table>
+        .footer-col-1,
+        .footer-col-2,
+        .footer-col-3,
+        .footer-col-4 {
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
 
-                <?php
+        .footer-col-4 {
+            flex-basis: 12%;
+            text-align: center;
+        }
 
-                if (isset($_POST['submit'])) {
-
-                    $tsk = $_POST['task'];
-                    $dt = $_POST['date'];
-                    $desc = $_POST['description'];
-
-
-                    $sql = "INSERT INTO `task-list` (`task`,`date`,`description`) VALUES ('$tsk', '$dt', '$desc')";
-
-                    if (mysqli_query($conn, $sql)) {
-                        echo
-                        "<script>alert('Task added successfully')
-            window.location.href='dashboard.php';
-            </script>";
-                        // echo "New record created successfully";
-                    } else {
-                        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-                    }
-                }
-                ?>
-
-
-</html>
-
-
+        ul {
+            list-style-type: none;
+        }
 
 
+        .footer hr {
+            border: none;
+            background: #b5b5b5;
+            height: 1px;
+            margin-bottom: 70px;
+        }
 
-
-
-
-
-
-
-</div>
+        .copyright {
+            text-align: center;
+        }
+    </style>
 
 </head>
+
+<body>
+    <br><br>
+    <h1><?php echo $userprofile; ?> 's TO-DO </h1>
+    <div class="container my-5">
+        <form method="post" action="task.php">
+            <div class="form-group">
+                <label>Task</label>
+                <input type="text" class="form-control" placeholder="Enter the task" name="task">
+            </div>
+            <div class="form-group">
+                <label>Date</label>
+                <input type="date" class="form-control" placeholder="Enter the date" name="date">
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <input type="textarea" class="form-control" placeholder="Enter the description" name="description">
+            </div>
+
+
+            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+
+
+            <?php
+
+            if (isset($_POST['submit'])) {
+
+                $tsk = $_POST['task'];
+                $dt = $_POST['date'];
+                $desc = $_POST['description'];
+
+
+                $sql = "INSERT INTO `task-list` (`task`,`date`,`description`) VALUES ('$tsk', '$dt', '$desc')";
+
+                if (mysqli_query($conn, $sql)) {
+                    echo
+                    "<script>alert('Task added successfully')
+            window.location.href='dashboard.php';
+            </script>";
+                    // echo "New record created successfully";
+                } else {
+                    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                }
+            }
+            ?>
+
+        </form>
+    </div>
+    <!------- FOOTER --------->
+    <div class="footer">
+        <div class="container">
+        </div>
+        <hr>
+        <p class="copyright">
+            Sufyan Kamil © 2021 <br> All Rights Reserved
+        </p>
+    </div>
+
+
+</body>
+
+</html>

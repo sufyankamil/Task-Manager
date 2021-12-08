@@ -1,14 +1,13 @@
 <?php
-
 include("connection.php");
 error_reporting(0);
-
-$_query = " SELECT * from `user`";
+$query = "SELECT * FROM `task-list`";
 $data = mysqli_query($conn, $query);
 $total = mysqli_num_rows($data);
 
 if ($total != 0) {
-    $userprofile = $_SESSION['username'];
+
+
 ?>
 
     <!DOCTYPE html>
@@ -19,9 +18,6 @@ if ($total != 0) {
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="style.css" rel="stylesheet">
-    </head>
-
-    <body>
 
         <div id="menu">
 
@@ -33,49 +29,62 @@ if ($total != 0) {
 
         </div>
 
+        <style type="text/css">
+            table {
+                width: 100%;
+                border: 1px solid black;
+            }
+
+            th {
+                background-color: #04AA6D;
+                color: white;
+            }
+
+            td {
+                text-align: center;
+            }
+        </style>
+    </head>
+
+    <body>
+
         <div id="content">
             <br><br>
-            <h1>Welcome <?php echo $userprofile; ?> ! </h1>
-            <br><br>
 
-            <form action="update.php" method="GET">
+            <form action="" method="GET">
 
                 <table align="center" border="1" cellspacing="10">
 
                     <tr>
-                        <td>Task</td>
-                        <td><input type="text" name="task" placeholder="Enter the Task" value="<?php echo $_GET['tsk']; ?>         " /></td>
+                        <th>ID</th>
+                        <th>Task</th>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                        <th>Action</th>
                     </tr>
 
-                    <tr>
-                        <td>Date of Completion</td>
-                        <td><input type="date" name="date" value="<?php echo $_GET['dt']; ?>" /></td>
-                    </tr>
-
-                    <tr>
-                        <td>Description</td>
-                        <td><textarea name="description" placeholder="Enter the Description" value="<?php echo $_GET['desc']; ?>   " /></textarea></td>
-                    </tr>
-
-                </table>
-
-            <?php
-            while ($row = mysqli_fetch_assoc($data)) {
-                if ($row['username'] == $userprofile) {
+                <?php
+                while ($result = mysqli_fetch_assoc($data)) {
                     echo "<tr>
-
-                    <td>" . $row['task'] . "</td>
-                    <td>" . $row['date'] . "</td>
-                    <td>" . $row['description'] . "</td>
-                    <td>" . $row['status'] . "</td>   
-                    <td>
-                    <a href='update_ref.php?tsk=$row[task]&dt=$row[date]&desc=$row[description]&status=$row[status]'>Update</a>
-                    </td>
+                    <td>" . $result['id'] . "</td>
+                    <td>" . $result['task'] . "</td>
+                    <td>" . $result['date'] . "</td>
+                    <td>" . $result['description'] . "</td>
+                    <td>" . $result['status'] . "</td>
+                    <br><br>
+                    <td><a href='update_ref.php?id=" . $result['id'] .   "'>Edit</a></td>
                     </tr>";
                 }
             }
-        }
-            ?>
+
+                ?>
+
+                </table>
+            </form>
+
+            <br><br>
+
 
         </div>
 

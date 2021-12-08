@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <div id="menu">
+
+            <a class="active" href="dashboard.php">Dashboard</a>
+
+            <li style="float: right; margin-right:  60px;"><a href="logout.php"> Logout</a></li>
+
+        </div>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            #menu {
+                width: 100%;
+                padding: -0px;
+                background: linear-gradient(135deg, #71b7e6, #9b59b6);
+                overflow: hidden;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                display: block;
+                list-style-type: none;
+            }
+
+            div a {
+                padding: 15px 20px;
+                text-decoration: none;
+                color: black;
+                font-size: 18px;
+            }
+
+            #menu .active {
+                color: black;
+                border: 1px solid black;
+                border-width: 2px;
+                padding-right: 10px;
+                padding-left: 10px;
+                margin-left: 10px;
+            }
+
+            #menu li a {
+                color: black;
+                border: 1px solid black;
+                border-width: 2px;
+                padding-right: 10px;
+                padding-left: 10px;
+                margin-left: 50px;
+            }
+
+            .container {
+                max-width: 1300px;
+                margin: auto;
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+
+            .row {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+
+            .col-2 {
+                flex-basis: 50%;
+                min-width: 300px;
+            }
+
+            .col-2 h1 {
+                font-size: 50px;
+                line-height: 60px;
+                margin: 25px 0;
+            }
+
+            /* about-css */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Poppins', sans-serif;
+            }
+
+            .navbar {
+                align-items: center;
+                padding: 20px;
+                display: flex;
+            }
+
+            nav {
+                flex: 1;
+                text-align: right;
+            }
+
+            nav ul {
+                display: inline-block;
+                list-style-type: none;
+            }
+
+            nav ul li {
+                display: inline-block;
+                margin-right: 20px;
+            }
+
+            a {
+                text-decoration: none;
+                color: black;
+            }
+
+            /*---- color change---*/
+            .chngeclr {
+                animation: colorchangezen 4s infinite;
+            }
+
+            @keyframes colorchangezen {
+                0% {
+                    color: blue;
+                }
+
+                25% {
+                    color: gray;
+                }
+
+                50% {
+                    color: orangered;
+                }
+
+                100% {
+                    color: black;
+                }
+            }
+
+            #MenuItems li a {
+                padding: 5px 5px;
+            }
+
+            #MenuItems .active {
+                background-color: darkblue;
+                color: wheat;
+                border-radius: 5px;
+            }
+
+            p {
+                color: black;
+            }
+
+            .container {
+                max-width: 1300px;
+                margin: auto;
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+
+            .row {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+
+            .col-2 {
+                flex-basis: 50%;
+                min-width: 300px;
+            }
+
+            .col-2 img {
+                max-width: 100%;
+                padding: 50px 0;
+            }
+
+            .col-2 h1 {
+                font-size: 50px;
+                line-height: 60px;
+                margin: 25px 0;
+            }
+
+            .btn {
+                display: inline-block;
+                background: darkblue;
+                color: beige;
+                padding: 8px 30px;
+                margin: 30px 0;
+                border-radius: 30px;
+                transition: 0.6s;
+            }
+
+            .btn:hover {
+                background: black;
+            }
+
+            .header {
+                background: lightblue;
+                background: radial-gradient(#fff, lightskyblue);
+            }
+
+            .header .row {
+                margin-top: 70px;
+            }
+
+            .categories {
+                margin: 70px 0;
+            }
+
+            .col-3 {
+                flex-basis: 30%;
+                min-width: 250px;
+                margin-bottom: 30px;
+            }
+
+            .col-3 img {
+                width: 100%;
+            }
+
+            .small-container {
+                max-width: 1080px;
+                margin: auto;
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+
+            .col-4 {
+                flex-basis: 25%;
+                padding: 10px;
+                min-width: 200px;
+                margin-bottom: 50px;
+                transition: transform 0.6s;
+            }
+
+            .col-4 img {
+                width: 100%;
+            }
+
+            .title {
+                text-align: center;
+                margin: 0 auto 80px;
+                position: relative;
+                line-height: 60px;
+                color: #555;
+            }
+
+            .title:after {
+                content: '';
+                background: darkblue;
+                width: 80px;
+                height: 5px;
+                border-radius: 5px;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            h4 {
+                color: #555;
+                font-weight: normal;
+            }
+
+            .col-4 p {
+                font-size: 14px;
+            }
+
+            .rating .fa {
+                color: black;
+            }
+
+            .col-4:hover {
+                transform: translateY(-5px);
+            }
+
+
+
+            /*--------- media query for menu ----------- */
+
+            @media only screen and (max-width: 800px) {
+                nav ul {
+                    position: absolute;
+                    top: 70px;
+                    left: 0;
+                    background: black;
+                    width: 100%;
+                    overflow: hidden;
+                    transition: max-height 0.7s;
+                }
+
+                nav ul li {
+                    display: block;
+                    margin-right: 50px;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                }
+
+                nav ul li a {
+                    color: white;
+                }
+
+                .menu-icon {
+                    display: block;
+                    cursor: pointer;
+                }
+            }
+
+            /* --------- page --------------*/
+            .row-2 {
+                justify-content: space-between;
+                margin: 100px auto 50px;
+            }
+
+            select {
+                border: 1px solid darkblue;
+                padding: 5px;
+            }
+
+            select:focus {
+                outline: none;
+            }
+
+
+
+
+            /*--------- media query for <600 screen size ----------- */
+            @media only screen and (max-width: 600px) {
+                .row {
+                    text-align: center;
+                }
+
+                .col-2,
+                .col-3,
+                .col-4 {
+                    flex-basis: 100%;
+                }
+
+                .single-product .row {
+                    text-align: left;
+                }
+
+                .single-product .col-2 {
+                    padding: 20px 0;
+                }
+
+                .single-product h1 {
+                    font-size: 24px;
+                    line-height: 32px;
+                }
+
+                .cart-info p {
+                    display: none;
+                }
+            }
+
+            /* ---------- footer -----------*/
+            .footer {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                background: linear-gradient(135deg, #71b7e6, #9b59b6);
+                color: whitesmoke;
+                font-size: 14px;
+                /* padding: 10px 0 20px; */
+            }
+
+            .footer p {
+                color: white;
+            }
+
+            .footer h3 {
+                color: white;
+                margin-bottom: 20px;
+            }
+
+            .footer-col-1,
+            .footer-col-2,
+            .footer-col-3,
+            .footer-col-4 {
+                min-width: 250px;
+                margin-bottom: 20px;
+            }
+
+            .footer-col-4 {
+                flex-basis: 12%;
+                text-align: center;
+            }
+
+            ul {
+                list-style-type: none;
+            }
+
+
+            .footer hr {
+                border: none;
+                background: #b5b5b5;
+                height: 1px;
+                margin-bottom: 70px;
+            }
+
+            .copyright {
+                text-align: center;
+            }
+        </style>
+    </head>
+
+    <body>
+
+
+        <!-------- about us------->
+        <div class="container">
+            <div class="row-2">
+                <div class="col-2">
+                    <h2>About Us</h2>
+                    <br>
+                    <p>
+                        WILL ADD
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-------developr profile------>
+        <div class="container">
+            <div class="row">
+                <div class="">
+                    <h2>Developer Profile</h2>
+                    <br><br><br>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="small-container">
+            <div class="row">
+                <div class="col-4">
+                    <img src="images/self.jpeg">
+                    <h4><b>Mohd Sufyan Kamil</b></h4>
+
+                    <p>My name is Mohd Sufyan Kamil. I am the one who has developed this Website.</p>
+                </div>
+
+                <div class="col-4">
+                    <img src="images/self.jpeg">
+                    <h4><b>Mohd Sufyan Kamil</b></h4>
+                    <p>I love learning new Languages(coding).</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!------- FOOTER --------->
+        <div class="footer">
+            <div class="container">
+            </div>
+            <hr>
+            <p class="copyright">
+                Sufyan Kamil © 2021 <br> All Rights Reserved
+            </p>
+        </div>
+        <!-------------- js for toogle menu ------------>
+        <script>
+            var MenuItems = document.getElementById("MenuItems");
+            MenuItems.style.maxHeight = "0px";
+
+            function menutoogle() {
+                if (MenuItems.style.maxHeight == "0px") {
+                    MenuItems.style.maxHeight = "200px"
+                }
+                else {
+                    MenuItems.style.maxHeight = "0px"
+                }
+            }
+        </script>
+
+
+
+
+    </body>
+
+</html>

@@ -1,48 +1,62 @@
 <?php
 include("connection.php");
 error_reporting(0);
+00
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sign Up</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
-
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: violet;
-        }
-
-        table {
-            width: 100%;
-            border: 1px solid black;
-        }
-
-        td {
-            vertical-align: bottom;
-
-        }
-
-        th {
-            background-color: #04AA6D;
-            color: white;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign Up</title>
+  <link href="css/register-style.css" rel="stylesheet">
 </head>
 
-<form action="" method="post" enctype="multipart/form-data">
 
-    <table>
 
+<div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form action="" method="post" enctype="multipart/form-data">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">First Name</span>
+            <input type="text" name="firstname" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Last Name</span>
+            <input type="text" name="lastname" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" name="username" placeholder="Enter your username" required>
+        </div>
+        <div class="input-box">
+          <span class="details">Password</span>
+          <input type="password" name="password" placeholder="Enter your password" required>
+        </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" name="email" placeholder="Enter your email" required>
+          </div>
+        </div>
+        
+        <div class="button">
+          <input type="submit" name="submit" value="Sign Up">
+          <a href='index.php' style="text-decoration: none;">Click here to login</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+<!-- <form action="" method="post" enctype="multipart/form-data">
+
+    <table align="center" border="2" cellpadding="100">
         <tr>
             <th>First Name</th>
             <td><input type="text" name="firstname" placeholder="Enter Full Name" required></td>
@@ -76,8 +90,7 @@ error_reporting(0);
         </tr>
     </table>
     <br><br>
-
-</form>
+</form> -->
 
 
 <?php

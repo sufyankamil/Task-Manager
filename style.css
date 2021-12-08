@@ -17,6 +17,6 @@
 }
 #menu .active{
     background-color: lightgray;
-    border-radius: 10px;
+    border-radius: 15px;
     color: black;
 }
