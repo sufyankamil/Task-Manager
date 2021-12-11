@@ -89,11 +89,11 @@ $userprofile = $_SESSION['username'];
             </div>
             <div class="form-group">
                 <label>Date</label>
-                <input type="date" class="form-control" placeholder="Enter the date" name="date" value="<?php echo $_GET['dt']; ?>" />
+                <input type="date" class="form-control" placeholder="Enter the date" name="date" value="<?php echo $_GET['date']; ?>" />
             </div>
             <div class="form-group">
                 <label>Description</label>
-                <input type="text" class="form-control" placeholder="Enter the description" name="desc" <?php echo $_GET['desc']; ?>" />
+                <input type="textarea" class="form-control" placeholder="Enter the description" name="description" <?php echo $_GET['description']; ?>" />
             </div>
             <div class="form-group">
                 <label>Status</label>
@@ -111,7 +111,9 @@ $userprofile = $_SESSION['username'];
             $desc = $_GET['description'];
             $status = $_GET['status'];
 
-            $query = "UPDATE `task-list` SET `task`='$tsk', `date`='$dt', `description`='$desc', `status`='$status' WHERE task='$tsk'";
+            $query = "UPDATE `task-list` SET task='$tsk', date='$dt', description='$desc', status='$status' WHERE task='$tsk'";
+
+            
 
             $data = mysqli_query($con, $query);
 

@@ -87,11 +87,11 @@ if ($total != 0) {
                 </div>
                 <div class="form-group">
                     <label>Date</label>
-                    <input type="date" class="form-control" placeholder="Enter the date" name="date" value="<?php echo $_GET['dt']; ?>" />
+                    <input type="date" class="form-control" placeholder="Enter the date" name="date" value="<?php echo $_GET['date']; ?>" />
                 </div>
                 <div class="form-group">
                     <label>Description</label>
-                    <input type="text" class="form-control" placeholder="Enter the description" name="description" value="<?php echo $_GET['desc']; ?>" />
+                    <input type="text" class="form-control" placeholder="Enter the description" name="description" value="<?php echo $_GET['description']; ?>" />
                 </div>
                 <div class="form-group">
                     <label>Status</label>
@@ -105,13 +105,12 @@ if ($total != 0) {
         while ($row = mysqli_fetch_assoc($data)) {
 
             echo "<tr>
-
                     <td>" . $row['task'] . "</td>
                     <td>" . $row['date'] . "</td>
                     <td>" . $row['description'] . "</td>
                     <td>" . $row['status'] . "</td>   
                     <td>
-                    <a href='update_ref.php?task=$row[tsk]&date=$row[dt]&description=$row[desc]&status=$row[status]'>Update</a>
+                        <a href='update_ref.php?id=" . $row['id'] . "&task=" . $row['task'] . "&date=" . $row['date'] . "&description=" . $row['description'] . "&status=" . $row['status'] . "'>Edit</a>
                     </td>
                     </tr>";
         }

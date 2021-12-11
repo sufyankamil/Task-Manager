@@ -189,7 +189,8 @@ $userprofile = $_SESSION['username'];
                  <td>" . $row['status'] . "</td>;
 
                     <td>
-                    <a href='UPD.php?id=" . $row['id'] . "'>Edit</a>
+                    <a href='update_ref.php?id=" . $row['id'] . "&task=" . $row['task'] . "&date=" . $row['date'] . "&description=" . $row['description'] . "&status=" . $row['status'] . "'>Edit</a>
+                    
                     <a href='delete_request.php?id=" . $row['id'] . "'>Delete</a>
                     </td>
                     
